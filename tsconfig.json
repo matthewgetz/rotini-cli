@@ -1,0 +1,15 @@
+{
+  "extends": "@rotini/configs",
+  "compilerOptions": {
+    "outDir": "dev-build"
+  },
+  "exclude": [
+    "build",
+    "coverage",
+    "dev-build",
+    "node_modules"
+  ],
+  "include": [
+    "src"
+  ]
+}

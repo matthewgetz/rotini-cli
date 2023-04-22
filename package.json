@@ -1,0 +1,56 @@
+{
+  "name": "@rotini/configs",
+  "description": "rotini project configuration files",
+  "version": "1.0.0",
+  "author": "Matt Getz <matthewcgetz@gmail.com>",
+  "repository": "https://github.com/matthewgetz/rotini-configs.git",
+  "license": "MIT",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "rotini": "./build/index.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./build/index.mjs",
+      "require": "./build/index.js",
+      "types": "./build/index.d.ts"
+    }
+  },
+  "files": [
+    "package.json",
+    "LICENSE",
+    "README.md",
+    "build"
+  ],
+  "keywords": [
+    "rotini",
+    "cli",
+    "framework"
+  ],
+  "scripts": {
+    "all": "npm run deps && npm run lint && npm run test:coverage && npm run compile && npm run build",
+    "build": "tsup --config ./node_modules/@rotini/configs/tsup.config.ts",
+    "build:watch": "npm run build -- --watch",
+    "compile": "tsc",
+    "compile:watch": "npm run compile -- --watch",
+    "deps": "npm run deps:dev",
+    "deps:dev": "ncu --dep dev -e 2",
+    "lint": "eslint src --config ./node_modules/@rotini/configs/.eslintrc.js --no-inline-config --max-warnings 0",
+    "test": "vitest --config ./node_modules/@rotini/configs/vitest.config.ts",
+    "test:coverage": "npm run test -- --coverage",
+    "test:watch": "npm run test -- --coverage --watch"
+  },
+  "dependencies": {
+    "rotini": "^3.0.0-rc"
+  },
+  "devDependencies": {
+    "@rotini/configs": "^1.0.4"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/@rotini/configs/.eslintrc.js"
+  }
+}
