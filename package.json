@@ -1,7 +1,7 @@
 {
   "name": "@rotini/tools",
   "description": "rotini project configuration files",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Matt Getz <matthewcgetz@gmail.com>",
   "repository": "https://github.com/matthewgetz/rotini-configs.git",
   "license": "MIT",
