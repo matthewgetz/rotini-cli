@@ -2,8 +2,7 @@ import { mkdirSync, writeFileSync, } from 'fs';
 import axios from 'axios';
 import extract from 'extract-zip';
 import { rimrafSync, } from 'rimraf';
-
-import { I_Command, } from '../../../../rotini/build';
+import { I_Command, } from 'rotini';
 
 export const generate: I_Command = {
   name: 'generate',
@@ -102,7 +101,7 @@ export const generate: I_Command = {
       const resolved_format = formats[format];
       const resolved_type = types[type];
 
-      const url = `https://raw.githubusercontent.com/matthewgetz/rotini/rc-3.0.0/examples/${example}/${resolved_format}/${resolved_type}.zip`;
+      const url = `https://raw.githubusercontent.com/matthewgetz/rotini/main/examples/${example}/${resolved_format}/${resolved_type}.zip`;
 
       const result = await axios.get(url, { headers: { Accept: 'application/zip', }, responseType: 'arraybuffer', });
 

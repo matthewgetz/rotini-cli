@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { rotini, } from '../../rotini/build';
+import { rotini, } from 'rotini';
 import { definition, configuration, } from './cli';
 
 void (async (): Promise<void> => {

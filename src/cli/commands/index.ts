@@ -1,4 +1,4 @@
-import { I_Command, } from '../../../../rotini/build';
+import { I_Command, } from 'rotini';
 
 import { generate, } from './generate';
 

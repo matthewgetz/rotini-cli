@@ -1,4 +1,4 @@
-import { I_ProgramConfiguration, I_ProgramDefinition, } from '../../../rotini/build';
+import { I_ProgramConfiguration, I_ProgramDefinition, } from 'rotini';
 import { version, } from '../../package.json';
 import { commands, } from './commands';
 import { global_flags, } from './global_flags';
