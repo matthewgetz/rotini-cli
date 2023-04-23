@@ -46,7 +46,7 @@
     "test:watch": "npm run test -- --coverage --watch"
   },
   "dependencies": {
-    "rotini": "^3.0.0-rc"
+    "rotini": "3.0.1-rc"
   },
   "devDependencies": {
     "@rotini/configs": "^1.0.4"
