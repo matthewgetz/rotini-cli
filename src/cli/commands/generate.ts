@@ -1,4 +1,7 @@
 import { mkdirSync, writeFileSync, } from 'fs';
+import axios from 'axios';
+import extract from 'extract-zip';
+import { rimrafSync, } from 'rimraf';
 
 import { I_Command, } from '../../../../rotini/build';
 
@@ -43,6 +46,16 @@ export const generate: I_Command = {
       default: 'cjs',
 
     },
+    {
+      name: 'example',
+      description: 'the example cli to use for the generated program',
+      variant: 'value',
+      type: 'string',
+      short_key: 'e',
+      long_key: 'example',
+      values: [ 'hello-world', ],
+      default: 'hello-world',
+    },
   ],
   examples: [
     {
@@ -59,7 +72,9 @@ export const generate: I_Command = {
     },
   ],
   operation: {
-    handler: ({ parsed, }): string => {
+    handler: async ({ parsed, }): Promise<string> => {
+      const cwd = process.cwd();
+
       const formats = {
         js: 'javascript',
         javascript: 'javascript',
@@ -74,19 +89,30 @@ export const generate: I_Command = {
         module: 'esm',
       };
 
+      const examples = {
+        'hello-world': 'hello-world',
+      };
+
       const [ generate, ] = parsed.commands;
       const directory = generate.arguments.directory as string;
+      const example = generate.flags.example as keyof typeof examples;
       const format = generate.flags.format as keyof typeof formats;
       const type = generate.flags.type as keyof typeof types;
-
+      const command = examples[example];
       const resolved_format = formats[format];
       const resolved_type = types[type];
 
+      const url = `https://raw.githubusercontent.com/matthewgetz/rotini/rc-3.0.0/examples/${example}/${resolved_format}/${resolved_type}.zip`;
+
+      const result = await axios.get(url, { headers: { Accept: 'application/zip', }, responseType: 'arraybuffer', });
+
+      rimrafSync(`${cwd}/${directory}`);
       mkdirSync(directory, { recursive: true, });
-      // call github api to get hello-world example and put it in the created directory
-      // unzip the example
-      console.log(resolved_format, resolved_type);
-      return `\ncd ${directory}\nnpm run setup\n${directory} hello-world\n`;
+      writeFileSync(`${cwd}/${directory}/rotini.zip`, result.data as string);
+      await extract(`${cwd}/${directory}/rotini.zip`, { dir: `${cwd}/${directory}`, });
+      rimrafSync(`${cwd}/${directory}/rotini.zip`);
+
+      return `\ncd ${directory}\nnpm run setup\nrfe ${command}\n`;
     },
   },
 };
