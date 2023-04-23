@@ -335,7 +335,7 @@
     "@pnpm/network.ca-file" "^1.0.1"
     config-chain "^1.1.11"
 
-"@rotini/configs@^1.0.4":
+"@rotini/configs@^1.0.6":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@rotini/configs/-/configs-1.0.6.tgz#3ea41d438d6d4f01fe617ad5b9358c94b9dfb069"
   integrity sha512-uNabzTK/x42/Bb27SnZBk137Hy4Hjp/5aloOqPf32/fikUV57z5uMntEYpkhCEEe7twWQqAJAPJbWPRLj+XaKw==
@@ -2994,16 +2994,16 @@ rimraf@^5.0.0:
     glob "^10.0.0"
 
 rollup@^3.2.5, rollup@^3.20.2:
-  version "3.20.7"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-3.20.7.tgz#4f045dfb388abe08dd159f8cd286dcaca1e80b28"
-  integrity sha512-P7E2zezKSLhWnTz46XxjSmInrbOCiul1yf+kJccMxT56vxjHwCbDfoLbiqFgu+WQoo9ij2PkraYaBstgB2prBA==
+  version "3.21.0"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-3.21.0.tgz#0a71517db56e150222670f88e5e7acfa4fede7c8"
+  integrity sha512-ANPhVcyeHvYdQMUyCbczy33nbLzI7RzrBje4uvNiTDJGIMtlKoOStmympwr9OtS1LZxiDmE2wvxHyVhoLtf1KQ==
   optionalDependencies:
     fsevents "~2.3.2"
 
-rotini@3.0.1-rc:
-  version "3.0.1-rc"
-  resolved "https://registry.yarnpkg.com/rotini/-/rotini-3.0.1-rc.tgz#f2e4deaa2aeb878950a9f7674e8ddf16f9cae702"
-  integrity sha512-hK75qxexT1U3d/p+NQxi15tru7y0mXhcdBVUd/ZxSf6eQ4JxFLjPeBiLuguAI2xd3QhB2w1vPhb0Wb8om9ZVvA==
+rotini@3.0.3-rc:
+  version "3.0.3-rc"
+  resolved "https://registry.yarnpkg.com/rotini/-/rotini-3.0.3-rc.tgz#18e183a7f6780f9375b2c916e4bde760f6c87231"
+  integrity sha512-XJpZyvqbf9SHfRBfII2TcoyWwpeXwlUb1UdmHAzCD5oGaCCdPsQ30zo6cmQeH/EagoBFc2949d6MB4zyl0LbNw==
 
 run-parallel@^1.1.9:
   version "1.2.0"

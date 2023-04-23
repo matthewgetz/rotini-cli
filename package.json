@@ -49,10 +49,10 @@
     "axios": "^1.3.6",
     "extract-zip": "^2.0.1",
     "rimraf": "^5.0.0",
-    "rotini": "3.0.1-rc"
+    "rotini": "3.0.3-rc"
   },
   "devDependencies": {
-    "@rotini/configs": "^1.0.4"
+    "@rotini/configs": "^1.0.6"
   },
   "eslintConfig": {
     "extends": "./node_modules/@rotini/configs/.eslintrc.js"
