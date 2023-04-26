@@ -1,4 +1,4 @@
-import { I_GlobalFlag, } from 'rotini';
+import { I_GlobalFlag, } from '../../../rotini/build';
 
 export const global_flags: I_GlobalFlag[] = [
   {

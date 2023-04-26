@@ -1,37 +1,6 @@
 {
   "name": "@rotini/tools",
-  "description": "rotini companion cli",
   "version": "0.1.3",
-  "author": "Matt Getz <matthewcgetz@gmail.com>",
-  "repository": "https://github.com/matthewgetz/rotini-tools.git",
-  "homepage": "https://rotini.dev",
-  "license": "MIT",
-  "main": "./build/index.js",
-  "types": "./build/index.d.ts",
-  "engines": {
-    "node": ">=18"
-  },
-  "bin": {
-    "rotini": "./build/index.js"
-  },
-  "exports": {
-    ".": {
-      "import": "./build/index.mjs",
-      "require": "./build/index.js",
-      "types": "./build/index.d.ts"
-    }
-  },
-  "files": [
-    "package.json",
-    "LICENSE",
-    "README.md",
-    "build"
-  ],
-  "keywords": [
-    "rotini",
-    "cli",
-    "framework"
-  ],
   "scripts": {
     "all": "npm run deps && npm run lint && npm run test:coverage && npm run compile && npm run build",
     "build": "tsup --config ./node_modules/@rotini/configs/tsup.config.ts",

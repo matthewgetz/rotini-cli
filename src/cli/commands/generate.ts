@@ -2,7 +2,8 @@ import { mkdirSync, writeFileSync, } from 'fs';
 import axios from 'axios';
 import extract from 'extract-zip';
 import { rimrafSync, } from 'rimraf';
-import { I_Command, } from 'rotini';
+
+import { I_Command, OperationError, } from '../../../../rotini/build';
 
 export const generate: I_Command = {
   name: 'generate',
@@ -14,9 +15,9 @@ export const generate: I_Command = {
       description: 'the name of the directory to be used for the generated program',
       type: 'string',
       variant: 'value',
-      isValid: (value: string): void => {
+      isValid: (value: unknown): void => {
         const allowedCharacters = /^[0-9A-Za-z_.-]+$/;
-        const containsDisallowedCharacter = !allowedCharacters.test(value);
+        const containsDisallowedCharacter = !allowedCharacters.test(value as string);
         if (containsDisallowedCharacter) {
           throw new Error(`Directory name "${value}" must only contain letters, numbers, hyphens, underscores, and periods.`);
         }
@@ -103,13 +104,18 @@ export const generate: I_Command = {
 
       const url = `https://raw.githubusercontent.com/matthewgetz/rotini/main/examples/${example}/${resolved_format}/${resolved_type}.zip`;
 
-      const result = await axios.get(url, { headers: { Accept: 'application/zip', }, responseType: 'arraybuffer', });
+      try {
+        const result = await axios.get(url, { headers: { Accept: 'application/zip', }, responseType: 'arraybuffer', });
 
-      rimrafSync(`${cwd}/${directory}`);
-      mkdirSync(directory, { recursive: true, });
-      writeFileSync(`${cwd}/${directory}/rotini.zip`, result.data as string);
-      await extract(`${cwd}/${directory}/rotini.zip`, { dir: `${cwd}/${directory}`, });
-      rimrafSync(`${cwd}/${directory}/rotini.zip`);
+        rimrafSync(`${cwd}/${directory}`);
+        mkdirSync(directory, { recursive: true, });
+        writeFileSync(`${cwd}/${directory}/rotini.zip`, result.data as string);
+        await extract(`${cwd}/${directory}/rotini.zip`, { dir: `${cwd}/${directory}`, });
+        rimrafSync(`${cwd}/${directory}/rotini.zip`);
+      } catch (e) {
+        const error = e as Error;
+        throw new OperationError(error.message);
+      }
 
       return `\ncd ${directory}\nnpm run setup\nrfe ${command}\n`;
     },
