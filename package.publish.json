@@ -1,0 +1,39 @@
+{
+  "name": "@rotini/cli",
+  "description": "rotini companion cli",
+  "version": "3.1.1",
+  "license": "MIT",
+  "author": "Matt Getz <matthewcgetz@gmail.com>",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "repository": "https://github.com/matthewgetz/rotini-tools.git",
+  "bugs": "https://github.com/matthewgetz/rotini-tools/issues",
+  "homepage": "https://rotini.dev",
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "rotini": "./build/index.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./build/index.mjs",
+      "require": "./build/index.js",
+      "types": "./build/index.d.ts"
+    }
+  },
+  "files": [
+    "package.json",
+    "LICENSE",
+    "README.md",
+    "build"
+  ],
+  "keywords": [
+    "rotini",
+    "cli",
+    "framework"
+  ],
+  "dependencies": {
+    "rotini": "3.1.1"
+  }
+}
