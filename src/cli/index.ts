@@ -1,9 +1,9 @@
-import { I_Configuration, I_Definition, } from '../../../rotini/build';
+import { Configuration, Definition, } from '../../../rotini/build';
 import { version, } from '../../package.json';
 import { commands, } from './commands';
 import { global_flags, } from './global_flags';
 
-export const definition: I_Definition = {
+export const definition: Definition = {
   name: 'rotini',
   description: 'The rotini cli framework companion cli.',
   documentation: 'https://rotini.dev',
@@ -12,8 +12,9 @@ export const definition: I_Definition = {
   global_flags,
 };
 
-export const configuration: I_Configuration = {
+export const configuration: Configuration = {
   strict_commands: true,
   strict_flags: true,
-  strict_usage: true,
+  strict_help: true,
+  strict_mode: false,
 };

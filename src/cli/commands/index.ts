@@ -1,7 +1,7 @@
-import { I_Command, } from '../../../../rotini/build';
+import { Command, } from 'rotini';
 
 import { generate, } from './generate';
 
-export const commands: I_Command[] = [
+export const commands: Command[] = [
   generate,
 ];

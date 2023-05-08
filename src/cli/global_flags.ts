@@ -1,6 +1,6 @@
-import { I_GlobalFlag, } from '../../../rotini/build';
+import { GlobalFlag, } from 'rotini';
 
-export const global_flags: I_GlobalFlag[] = [
+export const global_flags: GlobalFlag[] = [
   {
     name: 'output',
     description: 'the command output format',

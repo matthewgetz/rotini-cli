@@ -2,24 +2,23 @@ import { mkdirSync, writeFileSync, } from 'fs';
 import axios from 'axios';
 import extract from 'extract-zip';
 import { rimrafSync, } from 'rimraf';
+import { Command, OperationError, } from 'rotini';
 
-import { I_Command, OperationError, } from '../../../../rotini/build';
-
-export const generate: I_Command = {
+export const generate: Command = {
   name: 'generate',
   aliases: [ 'init', 'gen', ],
-  description: 'generate a rotini resource',
+  description: 'generate a rotini project',
   arguments: [
     {
       name: 'directory',
       description: 'the name of the directory to be used for the generated program',
       type: 'string',
       variant: 'value',
-      isValid: (value: unknown): void => {
+      validator: ({ coerced_value, }): void => {
         const allowedCharacters = /^[0-9A-Za-z_.-]+$/;
-        const containsDisallowedCharacter = !allowedCharacters.test(value as string);
+        const containsDisallowedCharacter = !allowedCharacters.test(coerced_value as string);
         if (containsDisallowedCharacter) {
-          throw new Error(`Directory name "${value}" must only contain letters, numbers, hyphens, underscores, and periods.`);
+          throw new Error(`Directory name "${coerced_value}" must only contain letters, numbers, hyphens, underscores, and periods.`);
         }
       },
     },
@@ -53,8 +52,8 @@ export const generate: I_Command = {
       type: 'string',
       short_key: 'e',
       long_key: 'example',
-      values: [ 'hello-world', ],
-      default: 'hello-world',
+      values: [ 'hello-world', 'mama-rotinis', 'template', ],
+      default: 'template',
     },
   ],
   examples: [
@@ -98,7 +97,6 @@ export const generate: I_Command = {
       const example = generate.flags.example as keyof typeof examples;
       const format = generate.flags.format as keyof typeof formats;
       const type = generate.flags.type as keyof typeof types;
-      const command = examples[example];
       const resolved_format = formats[format];
       const resolved_type = types[type];
 
@@ -117,7 +115,7 @@ export const generate: I_Command = {
         throw new OperationError(error.message);
       }
 
-      return `\ncd ${directory}\nnpm run setup\nrfe ${command}\n`;
+      return `\ncd ${directory}\nnpm run setup\n${example} --help\n`;
     },
   },
 };
