@@ -6,8 +6,8 @@
   "author": "Matt Getz <matthewcgetz@gmail.com>",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
-  "repository": "https://github.com/matthewgetz/rotini-tools.git",
-  "bugs": "https://github.com/matthewgetz/rotini-tools/issues",
+  "repository": "https://github.com/matthewgetz/rotini-cli.git",
+  "bugs": "https://github.com/matthewgetz/rotini-cli/issues",
   "homepage": "https://rotini.dev",
   "engines": {
     "node": ">=18"
