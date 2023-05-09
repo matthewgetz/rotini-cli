@@ -58,7 +58,7 @@ export const generate: Command = {
   ],
   examples: [
     {
-      description: 'simple generate (defaults to javascript commonjs example)',
+      description: 'simple generate (defaults to typescript commonjs example)',
       usage: 'rotini generate my-cli',
     },
     {

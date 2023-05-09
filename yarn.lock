@@ -2985,10 +2985,10 @@ rollup@^3.2.5, rollup@^3.21.0:
   optionalDependencies:
     fsevents "~2.3.2"
 
-rotini@3.1.3:
-  version "3.1.3"
-  resolved "https://registry.yarnpkg.com/rotini/-/rotini-3.1.3.tgz#96364762692ee62cf7fa3604e105b7546236ff78"
-  integrity sha512-IynAchBF/6KBckv4Nx9vseFrJ5XdnOE5VejXA32ZuhYk4mrQAEsji55B7cDcf0SwXQP9aNQijQI8QKjHMZJhGw==
+rotini@3.1.4:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/rotini/-/rotini-3.1.4.tgz#f8ad92b919a3d92edeb15d9f58b7e0869bfcb6fb"
+  integrity sha512-UVXkzFfIRJAe2W7y4+pmDwH5wpMWLssQnj/H3w6sllmbu+X6w7aIgFOdls7rkCTjqH1HW8fddUVX+Z2XOduJmg==
 
 run-parallel@^1.1.9:
   version "1.2.0"
