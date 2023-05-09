@@ -355,10 +355,10 @@
     "@pnpm/network.ca-file" "^1.0.1"
     config-chain "^1.1.11"
 
-"@rotini/configs@^3.1.4":
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/@rotini/configs/-/configs-3.1.4.tgz#10efeb818e08e0a35ce2d0fa288244f5265d6c7c"
-  integrity sha512-ae2OaAS32rotywEx7ljTF9p5WPdiTdjlAwoptjwxz1sWqcwbSB1BW8k2Y7SmqRipUJHz31YKJmPASlmLwhUZlA==
+"@rotini/configs@^3.1.5":
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/@rotini/configs/-/configs-3.1.5.tgz#8cd4ddf83de57329980cc0d53f1ea09097586100"
+  integrity sha512-US+nmHtLgT5EsFahN5fJYs+3GDfWGjEBTapPLeK4SWmcDOugONoeJFTXwivYS3HB6LdWOrJU0iGMYKKKMQndOw==
   dependencies:
     "@types/node" "*"
     "@typescript-eslint/eslint-plugin" "*"
@@ -2985,10 +2985,10 @@ rollup@^3.2.5, rollup@^3.21.0:
   optionalDependencies:
     fsevents "~2.3.2"
 
-rotini@3.1.4:
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/rotini/-/rotini-3.1.4.tgz#f8ad92b919a3d92edeb15d9f58b7e0869bfcb6fb"
-  integrity sha512-UVXkzFfIRJAe2W7y4+pmDwH5wpMWLssQnj/H3w6sllmbu+X6w7aIgFOdls7rkCTjqH1HW8fddUVX+Z2XOduJmg==
+rotini@3.1.5:
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/rotini/-/rotini-3.1.5.tgz#2cf0fdfee70fe3872a55c7415e4f4ce2a5a224a1"
+  integrity sha512-NH83Vvw5njNFh3w6ABOw9Ag/x3QlHPjBgxrKG92WlwTYJ8pQENsMEzkRwhqWbgzs4mc8u3J6XKsh4r70rA3rOw==
 
 run-parallel@^1.1.9:
   version "1.2.0"

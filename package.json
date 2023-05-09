@@ -1,6 +1,6 @@
 {
   "name": "@rotini/cli",
-  "version": "3.1.4",
+  "version": "3.1.5",
   "scripts": {
     "all": "yarn run deps && yarn run lint && yarn run test:coverage && yarn run compile && yarn run build",
     "build": "tsup --config ./node_modules/@rotini/configs/bsd.tsup.config.ts",
@@ -18,10 +18,10 @@
     "axios": "^1.4.0",
     "extract-zip": "^2.0.1",
     "rimraf": "^5.0.0",
-    "rotini": "3.1.4"
+    "rotini": "3.1.5"
   },
   "devDependencies": {
-    "@rotini/configs": "^3.1.4"
+    "@rotini/configs": "^3.1.5"
   },
   "eslintConfig": {
     "extends": "./node_modules/@rotini/configs/.eslintrc.js"

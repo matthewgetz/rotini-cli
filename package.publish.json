@@ -1,7 +1,7 @@
 {
   "name": "@rotini/cli",
   "description": "rotini companion cli",
-  "version": "3.1.4",
+  "version": "3.1.5",
   "license": "MIT",
   "author": "Matt Getz <matthewcgetz@gmail.com>",
   "main": "./build/index.js",
@@ -34,6 +34,6 @@
     "framework"
   ],
   "dependencies": {
-    "rotini": "3.1.4"
+    "rotini": "3.1.5"
   }
 }
