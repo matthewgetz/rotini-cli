@@ -1,6 +1,6 @@
 {
   "name": "@rotini/cli",
-  "version": "3.1.1",
+  "version": "3.1.3",
   "scripts": {
     "all": "yarn run deps && yarn run lint && yarn run test:coverage && yarn run compile && yarn run build",
     "build": "tsup --config ./node_modules/@rotini/configs/tsup.config.ts",
@@ -18,7 +18,7 @@
     "axios": "^1.4.0",
     "extract-zip": "^2.0.1",
     "rimraf": "^5.0.0",
-    "rotini": "3.1.1"
+    "rotini": "3.1.3"
   },
   "devDependencies": {
     "@rotini/configs": "^1.0.8"

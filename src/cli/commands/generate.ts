@@ -32,7 +32,7 @@ export const generate: Command = {
       short_key: 'f',
       long_key: 'format',
       values: [ 'js', 'javascript', 'ts', 'typescript', ],
-      default: 'js',
+      default: 'typescript',
     },
     {
       name: 'type',
@@ -42,12 +42,12 @@ export const generate: Command = {
       short_key: 't',
       long_key: 'type',
       values: [ 'cjs', 'commonjs', 'esm', 'module', ],
-      default: 'cjs',
+      default: 'commonjs',
 
     },
     {
       name: 'example',
-      description: 'the example cli to use for the generated program',
+      description: 'the example project to use for the generated program',
       variant: 'value',
       type: 'string',
       short_key: 'e',
@@ -71,7 +71,7 @@ export const generate: Command = {
     },
   ],
   operation: {
-    handler: async ({ parsed, }): Promise<string> => {
+    handler: async ({ parsed, }): Promise<string | object> => {
       const cwd = process.cwd();
 
       const formats = {
@@ -93,6 +93,7 @@ export const generate: Command = {
       };
 
       const [ generate, ] = parsed.commands;
+      const { output, } = parsed.global_flags;
       const directory = generate.arguments.directory as string;
       const example = generate.flags.example as keyof typeof examples;
       const format = generate.flags.format as keyof typeof formats;
@@ -115,7 +116,11 @@ export const generate: Command = {
         throw new OperationError(error.message);
       }
 
-      return `\ncd ${directory}\nnpm run setup\n${example} --help\n`;
+      const result = output === 'json'
+        ? { result: `cd ${directory} && npm run setup && ${example} --help`, }
+        : `\ncd ${directory}\nnpm run setup\n${example} --help\n\n      🍝\n`;
+
+      return result;
     },
   },
 };
